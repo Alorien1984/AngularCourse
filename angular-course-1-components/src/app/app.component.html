@@ -1,0 +1,28 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<div class="demo">
+    <div>{{startDate | date: 'MMM ss yyyy'}}</div>
+</div>
+
+<div class="courses">
+
+    <!-- Creates a different style in ngFor operator -->
+    <!-- <course-card *ngFor="let course of courses; index as i; first as isFirst; last as isLast;
+                        even as isEven; odd as isOdd;"
+                [class.is-first]="isFirst"
+                [class.is-last]="isLast"
+                [class.is-even]="isEven"
+                [class.is-odd]="isOdd" -->
+
+    <course-card *ngFor="let course of courses; index as i;"    
+    (courseSelected)="courseSelected($event)" 
+    [course] ="course" [cardIndex]="i+1"></course-card>
+    
+</div>
+
+
